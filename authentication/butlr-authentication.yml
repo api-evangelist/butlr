@@ -1,0 +1,46 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.butlr.io/getting-started/authentication
+docs: https://docs.butlr.io/getting-started
+summary:
+  types: [oauth2]
+  bearer: true
+  token_format: JWT
+  identity_provider: Auth0
+  oauth2_flows: [password, clientCredentials, authorizationCode]
+schemes:
+- name: OAuth2 Password Grant
+  type: oauth2
+  flow: password
+  token_endpoint: https://api.butlr.io/api/v2/login
+  request: 'POST JSON {username, password}'
+  returns: [access_token, refresh_token, id_token, scope, expires_in, token_type]
+  token_type: Bearer
+  use_case: >-
+    First-party/trusted clients acting on behalf of a specific user; issues
+    refresh tokens for seamless session maintenance.
+- name: OAuth2 Client Credentials Grant
+  type: oauth2
+  flow: clientCredentials
+  audience: https://butlrauth/
+  use_case: >-
+    Server-to-server / machine-to-machine access using client_id + client_secret,
+    with no end-user context. Recommended for API integrations and the MCP server.
+  provisioning: >-
+    Mint client credentials in the Butlr Web App (app.butlr.io) under Account
+    Settings > API tokens, or programmatically via the Auth0 M2M Client Service
+    (POST /api/v1/client). Credentials are authorized for the Butlr API audience
+    (https://butlrauth/).
+- name: OAuth2 Authorization Code Grant
+  type: oauth2
+  flow: authorizationCode
+  provider: Auth0 (hosted redirect)
+  use_case: >-
+    Used by the Butlr Dashboard to keep Butlr out of the password-exchange flow.
+    Documented as planned for the developer API but not yet exposed there.
+usage:
+  header: 'Authorization: Bearer <access_token>'
+notes: >-
+  All API requests are authenticated with OAuth 2.0-compliant JWT access tokens
+  passed as a Bearer token. Identity is backed by Auth0. There is no API-key
+  scheme. Legacy v2 password-grant login endpoint remains at /api/v2/login.
