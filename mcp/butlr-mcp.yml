@@ -1,0 +1,46 @@
+generated: '2026-07-18'
+method: searched
+status: published
+source: https://docs.butlr.io/mcp-server
+server:
+  name: butlr
+  package: "@butlr/butlr-mcp-server"
+  transport: stdio
+  run: npx @butlr/butlr-mcp-server
+  repository: https://github.com/butlrtechnologies/butlr-mcp
+  npm: https://www.npmjs.com/package/@butlr/butlr-mcp-server
+  license: MIT
+  read_only: true
+  auth:
+    scheme: oauth2-client-credentials
+    env: [BUTLR_CLIENT_ID, BUTLR_CLIENT_SECRET]
+    notes: >-
+      Uses the same Butlr OAuth 2.0 client credentials as the rest of the API;
+      token refresh handled automatically. Enforces read-only API scopes -
+      exposes no mutations.
+  clients: [Claude Desktop, Claude Code, Cursor, VS Code Copilot]
+tools:
+- name: butlr_search_assets
+  description: Fuzzy-search sites, buildings, floors, rooms, and sensors by name.
+- name: butlr_get_asset_details
+  description: Comprehensive details for specific assets by ID, with batch support.
+- name: butlr_hardware_snapshot
+  description: Online/offline status and battery levels across your portfolio.
+- name: butlr_available_rooms
+  description: Currently unoccupied rooms, filterable by capacity and tags.
+- name: butlr_space_busyness
+  description: Current occupancy with qualitative labels and trend comparison.
+- name: butlr_traffic_flow
+  description: Entry/exit counts with hourly breakdown for traffic-mode sensors.
+- name: butlr_list_topology
+  description: Org hierarchy tree with flexible depth control.
+- name: butlr_fetch_entity_details
+  description: Retrieve specific fields for entities by ID (minimal token usage).
+- name: butlr_get_occupancy_timeseries
+  description: Historical occupancy data with configurable time ranges.
+- name: butlr_get_current_occupancy
+  description: Real-time occupancy snapshot (last 5-minute median).
+notes: >-
+  Official hosted-on-npm MCP server published by Butlr Technologies. A thin,
+  read-only wrapper over the GraphQL and Reporting APIs. Authoritative tool list
+  (with parameter/response schemas) lives in the repo README.

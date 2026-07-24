@@ -1,0 +1,24 @@
+generated: '2026-07-18'
+method: searched
+source: https://www.npmjs.com/package/@butlr/butlr-mcp-server
+packages:
+- language: javascript
+  registry: npm
+  name: "@butlr/butlr-mcp-server"
+  url: https://www.npmjs.com/package/@butlr/butlr-mcp-server
+  install: npx @butlr/butlr-mcp-server
+  latest_version: 0.5.0
+  license: MIT
+  official: true
+  bin: butlr-mcp
+  description: >-
+    Official Butlr Model Context Protocol (MCP) server - a first-party,
+    read-only Node client that wraps the Butlr GraphQL and Reporting APIs and
+    exposes them as MCP tools (runs via npx; no local install required).
+  repository: https://github.com/butlrtechnologies/butlr-mcp
+notes: >-
+  No language SDKs (Python/Go/Java/Ruby/PHP/.NET) were found on npm, PyPI,
+  Maven Central, NuGet, pkg.go.dev, RubyGems, Packagist, or crates.io. The
+  authentication docs show hand-rolled cURL/Go/Python request examples rather
+  than a published client library. The one official first-party package is the
+  MCP server above (also catalogued in mcp/butlr-mcp.yml).

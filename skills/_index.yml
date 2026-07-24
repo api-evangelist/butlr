@@ -1,0 +1,21 @@
+generated: '2026-07-18'
+method: generated
+source: https://docs.butlr.io
+note: >-
+  Butlr publishes no OpenAPI. These Agent Skills are grounded in real, documented
+  operations - the official MCP server tools (docs.butlr.io/mcp-server) and the
+  REST Reporting API (POST https://api.butlr.io/api/v3/reporting) - not invented
+  operationIds.
+skills:
+- file: butlr-find-available-space.md
+  name: Find available space and current busyness
+  api: mcp/butlr-mcp.yml
+  operations: [butlr_search_assets, butlr_available_rooms, butlr_space_busyness, butlr_get_current_occupancy]
+- file: butlr-occupancy-analytics.md
+  name: Analyze historical occupancy and traffic
+  api: https://api.butlr.io/api/v3/reporting
+  operations: [butlr_get_occupancy_timeseries, butlr_traffic_flow, reporting_query]
+- file: butlr-sensor-health.md
+  name: Check sensor and hardware health
+  api: mcp/butlr-mcp.yml
+  operations: [butlr_hardware_snapshot, butlr_list_topology, butlr_get_asset_details]

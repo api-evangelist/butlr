@@ -1,0 +1,63 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.butlr.io
+authentication:
+  style: oauth2-bearer-jwt
+  header: 'Authorization: Bearer <access_token>'
+  flows: [password, clientCredentials]
+  identity_provider: Auth0
+  ref: authentication/butlr-authentication.yml
+api_surfaces:
+- name: GraphQL (asset management)
+  base: https://api.butlr.io/api/v3/graphql
+  reference: https://graphql-docs.butlr.io/graphql/
+- name: Reporting (REST, historical occupancy)
+  base: https://api.butlr.io/api/v3/reporting
+  method: POST
+  reference: https://docs.butlr.io/historical-occupancy/reporting-api-overview
+querying:
+  reporting:
+    style: windowed-query-body
+    request: 'POST a JSON body with window + filter + group_by'
+    window: {every: '1m|1h|1d', function: 'mean|max|sum|median', timezone: IANA, create_empty: bool}
+    filter: {start: absolute-ISO8601, stop: absolute-ISO8601, measurements: [], spaces: {eq: []}, value: {gte: 0}}
+    group_by: {order: [time]}
+    guidance:
+    - Use absolute start/stop times; avoid relative time (e.g. -5m) which can drop data.
+    - Always supply a timezone for traffic-based occupancy.
+    - Use median for 1-minute intervals, mean/max for larger intervals, sum for traffic.
+  graphql:
+    style: field-selection + filtering
+    filtering_docs: https://docs.butlr.io/asset-management/filtering
+idempotency:
+  request_key: null
+  consumer_side: >-
+    Butlr does not document an Idempotency-Key request header for writes. For
+    webhooks it explicitly instructs consumers to implement idempotent
+    processing to handle out-of-order or duplicate event delivery.
+pagination:
+  style: graphql-filtering
+  notes: Documented via GraphQL filtering; no cursor/offset envelope published for REST reporting.
+metadata:
+  custom_ids: [floor_custom_id, room_custom_id, zone_custom_id]
+  notes: Customer-defined ids echoed on reporting responses and webhook messages when set.
+versioning:
+  scheme: uri-path
+  current: v3
+  ref: lifecycle/butlr-lifecycle.yml
+error_envelope:
+  documented: false
+  notes: No dedicated error-code reference or RFC 9457 problem+json usage was found in the docs.
+rate_limiting:
+  documented: false
+  notes: No published rate-limit headers or quotas found; reporting docs recommend <24h ranges for 1-minute queries for performance.
+identifiers:
+  space_prefix: 'space_'
+  event_prefix: 'event_'
+  client_prefix: 'client_'
+cross_references:
+  authentication: authentication/butlr-authentication.yml
+  scopes: scopes/butlr-scopes.yml
+  lifecycle: lifecycle/butlr-lifecycle.yml
+  webhooks: asyncapi/butlr-webhooks.yml
+  data_model: data-model/butlr-data-model.yml

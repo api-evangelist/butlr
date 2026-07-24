@@ -1,0 +1,28 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.butlr.io/changelog
+versioning:
+  scheme: uri-path
+  current: v3
+  history: [v2, v3]
+  docs: https://docs.butlr.io/getting-started
+deprecation:
+  policy: >-
+    Butlr announces deprecations and end-of-life dates via its dated changelog.
+    Legacy v2 endpoints (v2/spaces, v2/hives, v2/sensors) were announced and
+    reached end-of-life on 2024-10-11; the platform has since moved to v3.
+  docs: https://docs.butlr.io/changelog
+  sunset_header: unknown
+  deprecated_endpoints:
+  - v2/spaces
+  - v2/hives
+  - v2/sensors
+sla:
+  url: null
+  uptime_target: null
+status_page: null
+notes: >-
+  No public status page (status.butlr.io) or published SLA/uptime target was
+  found. Deprecation is communicated through the changelog with explicit EOL
+  dates, and API versioning is by URI path (v2 -> v3). No OpenAPI is published,
+  so no per-operation `deprecated: true` flags could be derived.

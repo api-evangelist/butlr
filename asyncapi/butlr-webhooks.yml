@@ -1,0 +1,45 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.butlr.io/real-time-occupancy/webhooks-overview
+docs: https://docs.butlr.io/real-time-occupancy/webhooks-overview
+management:
+  style: graphql-self-service
+  docs: https://docs.butlr.io/real-time-occupancy/manage-webhooks
+  operations: [createWebhooks, updateWebhooks, deleteWebhooks, listWebhooks]
+  properties:
+  - filters (filter events by ids)
+  - send_on_value_change (fire only on value change)
+delivery:
+  ordering: not-guaranteed
+  guidance: >-
+    Events are delivered as received (prioritizing speed). Use event timestamps
+    for ordering and implement idempotent processing to handle out-of-order or
+    duplicate events. Users can subscribe only once per event type.
+envelope:
+  fields: [id, type, timestamp, version, metadata, data]
+  metadata_custom_ids: [floor_custom_id, room_custom_id, zone_custom_id]
+events:
+- type: DETECTIONS
+  description: Coordinates (x,y) of detected people within a sensor's field of view (local + world).
+- type: TRAFFIC
+  description: Someone enters or exits a monitored area (data.in / data.out).
+- type: FLOOR_OCCUPANCY
+  description: Number of occupants on a floor from presence sensors.
+- type: FLOOR_OCCUPANCY_1MIN
+  description: Floor occupancy smoothed/aggregated at 1-minute granularity.
+- type: ROOM_OCCUPANCY
+  description: Number of occupants in a room from presence sensors.
+- type: ROOM_OCCUPANCY_1MIN
+  description: Room occupancy smoothed/aggregated at 1-minute granularity.
+- type: ZONE_OCCUPANCY
+  description: Number of occupants in a zone from presence sensors.
+- type: ZONE_OCCUPANCY_1MIN
+  description: Zone occupancy smoothed/aggregated at 1-minute granularity.
+- type: PIR_MOTION
+  description: Activity detected by the Heatic2+ sensor in a room (motion).
+- type: PIR_NO_MOTION
+  description: No activity detected by the Heatic2+ sensor in a room.
+notes: >-
+  Butlr documents a rich webhook event surface but publishes no AsyncAPI
+  document; a faithful AsyncAPI 3.0.0 rendering of these documented events is
+  generated at asyncapi/butlr-events-asyncapi.yml.
