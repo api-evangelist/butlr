@@ -4,7 +4,7 @@ status: published
 source: https://docs.butlr.io/mcp-server
 server:
   name: butlr
-  package: "@butlr/butlr-mcp-server"
+  package: '@butlr/butlr-mcp-server'
   transport: stdio
   run: npx @butlr/butlr-mcp-server
   repository: https://github.com/butlrtechnologies/butlr-mcp
@@ -13,12 +13,16 @@ server:
   read_only: true
   auth:
     scheme: oauth2-client-credentials
-    env: [BUTLR_CLIENT_ID, BUTLR_CLIENT_SECRET]
-    notes: >-
-      Uses the same Butlr OAuth 2.0 client credentials as the rest of the API;
-      token refresh handled automatically. Enforces read-only API scopes -
-      exposes no mutations.
-  clients: [Claude Desktop, Claude Code, Cursor, VS Code Copilot]
+    env:
+    - BUTLR_CLIENT_ID
+    - BUTLR_CLIENT_SECRET
+    notes: Uses the same Butlr OAuth 2.0 client credentials as the rest of the API; token refresh handled
+      automatically. Enforces read-only API scopes - exposes no mutations.
+  clients:
+  - Claude Desktop
+  - Claude Code
+  - Cursor
+  - VS Code Copilot
 tools:
 - name: butlr_search_assets
   description: Fuzzy-search sites, buildings, floors, rooms, and sensors by name.
@@ -40,7 +44,12 @@ tools:
   description: Historical occupancy data with configurable time ranges.
 - name: butlr_get_current_occupancy
   description: Real-time occupancy snapshot (last 5-minute median).
-notes: >-
-  Official hosted-on-npm MCP server published by Butlr Technologies. A thin,
-  read-only wrapper over the GraphQL and Reporting APIs. Authoritative tool list
-  (with parameter/response schemas) lives in the repo README.
+notes: Official hosted-on-npm MCP server published by Butlr Technologies. A thin, read-only wrapper over
+  the GraphQL and Reporting APIs. Authoritative tool list (with parameter/response schemas) lives in the
+  repo README.
+deployment:
+  mode: local-stdio
+  verified: searched
+  tools: 10
+  checked: '2026-08-12'
+  source: catalog MCP census
