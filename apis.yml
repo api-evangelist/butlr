@@ -43,12 +43,34 @@ tags:
 - Spatial Intelligence
 - IoT
 - GraphQL
+- Webhook
+- Real-Estate
+tags_raw:
+- Company
+- Sensors
+- Occupancy
+- People Sensing
+- Smart Buildings
+- Spatial Intelligence
+- IoT
+- GraphQL
 - Webhooks
 - Real Estate
 apis:
 - aid: butlr:butlr-graphql-api
   name: Butlr GraphQL API
   tags:
+  - Assets
+  - Sites
+  - Buildings
+  - Floors
+  - Rooms
+  - Zones
+  - Hives
+  - Sensors
+  - Tags
+  - Webhook
+  tags_raw:
   - Assets
   - Sites
   - Buildings
