@@ -58,7 +58,7 @@ tags:
 - IoT
 - GraphQL
 - Webhook
-- Real-Estate
+- Real Estate
 tags_raw:
 - Company
 - Sensors
@@ -70,6 +70,7 @@ tags_raw:
 - GraphQL
 - Webhooks
 - Real Estate
+- Real-Estate
 apis:
 - aid: butlr:butlr-graphql-api
   name: Butlr GraphQL API
