@@ -64,6 +64,122 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Butlr is a company surfaced as a portfolio company of foundry-group and added to the API Evangelist network as a stub for enrichment. Sector: sensors. This profile is a lead awaiting the enrichment pipeline.
+Butlr is an AI platform for privacy-first, heat-based (thermal) occupancy sensing that turns anonymous people-sensing into real-time space-utilization insight for workplaces, senior living, higher education, retail, and smart buildings. Its camera-free thermal sensors capture no personally identifiable information while powering occupancy, traffic, presence-time, and heatmap analytics. Butlr exposes an API-first platform: a GraphQL asset-management API for sites, buildings, floors, rooms, zones, hives, and sensors; a RESTful Reporting API (v3) for historical time-series occupancy; real-time webhooks for detections, traffic, and occupancy events; and an official Model Context Protocol (MCP) server for agent access. The company reports 30,000+ deployed sensors generating a billion data points daily across 100M+ square feet in 22 countries.
 
-Backed by: foundry-group — https://www.butlr.com
+**Areas:** Company · Sensors · Occupancy · People Sensing · Smart Buildings · Spatial Intelligence · IoT · GraphQL · Webhook · Real Estate
+
+## Butlr on APIs.io
+
+Everything profiled for Butlr is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/butlr/](https://apis.io/providers/butlr/)** — or go straight to one of the APIs or properties below.
+
+### APIs (2)
+
+- [Butlr GraphQL API](https://apis.io/apis/butlr/butlr-graphql-api/) — The Butlr GraphQL API manages spatial assets and their configuration across the organization hierarchy - sites, buildings, floors, rooms, zones, hives, and…
+- [Butlr Reporting API](https://apis.io/apis/butlr/butlr-reporting-api/) — The Butlr Reporting API is a RESTful, time-series occupancy API for historical space-utilization analysis. A POST query against a windowing/filter body…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### AsyncAPI (2)
+
+Event-driven and webhook contracts.
+
+- [Butlr Real-Time Occupancy Webhooks](https://apis.io/asyncapis/butlr/butlr-events-asyncapi/)
+- [Butlr Webhooks](https://apis.io/asyncapis/butlr/butlr-webhooks/)
+
+#### Event channels (1)
+
+Individual events and webhooks the provider emits.
+
+- [{subscriberWebhookUrl}](https://apis.io/channels/butlr/subscriberwebhookurl/)
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [butlr](https://apis.io/servers/butlr/butlr/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Butlr Authentication](https://apis.io/security/butlr/butlr-authentication/)
+- [Butlr Domain Security](https://apis.io/security/butlr/butlr-domain-security/)
+- [Butlr Vulnerability Disclosure](https://apis.io/security/butlr/butlr-vulnerability-disclosure/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Butlr Scopes](https://apis.io/scopes/butlr/butlr-scopes/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.butlr.com)
+- [Documentation](https://docs.butlr.io)
+- [Getting started](https://docs.butlr.io/getting-started)
+- [API reference](https://graphql-docs.butlr.io/graphql/)
+- [Sign up](https://app.butlr.io)
+- [Support](https://support.butlr.io)
+- [Blog](https://www.butlr.com/blog)
+- [Terms of service](https://www.butlr.io/legal/tc)
+- [Privacy policy](https://www.butlr.io/legal/privacy-policy)
+- [GitHub](https://github.com/butlrtechnologies)
+
+## API Evangelist rating
+
+**Kin Score 45.4** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 71.7 |
+| Contract quality | 39.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 44.7 |
+| Developer ergonomics | 62.5 |
+| Access clarity | 21.1 |
+
+**Agent readiness 24.1** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | documented (partial credit) |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | yes |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+
+**Regulatory alignment 40.2** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/butlr/](https://apis.io/providers/butlr/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Butlr: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/butlr/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
